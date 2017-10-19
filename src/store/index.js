@@ -20,6 +20,16 @@ const mutations = {
   },
   [types.REMOVE_FROM_CART] (state, productId) {
     state.added = state.added.filter(p => p.id !== productId)
+  },
+  [types.REMOVE_ONE_FROM_CART] (state, productId) {
+    const record = state.added.find(product => product.id === productId);
+    
+    if (record.quantity > 1) {
+      record.quantity--;
+    } else {
+      state.added = state.added.filter(p => p.id !== productId);
+    }
+    
   }
 }
 
@@ -28,9 +38,9 @@ const state = {
   all: [
     {
       id: uuid.v4(),
-      name: 'Livro um',
-      description: 'Descrição do livro',
-      price: 399.20,
+      name: 'Entre Quatro Paredes',
+      description: 'Grace é a esposa perfeita. Ela abriu mão do emprego para se dedicar ao marido e à casa. Agora prepara jantares maravilhosos, cuida do jardim, costura e pinta quadros fantásticos. Grace mal tem tempo de sentir falta de sua antiga vida.',
+      price: 24.40,
       photo: {
         url: 'http://fakeimg.pl/90x120/',
         orientation: 'vertical',
@@ -113,6 +123,9 @@ const actions = {
   },
   removeFromCart({ commit }, product){
     commit(types.REMOVE_FROM_CART, product.id)
+  },
+  removeOneFromCart({ commit }, product){
+    commit(types.REMOVE_ONE_FROM_CART, product.id)
   }
 }
 

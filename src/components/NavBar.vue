@@ -35,7 +35,7 @@ export default {
 .header {
   text-align: center;
   width: 90%;
-  margin: 2% auto 5%;
+  margin: 2% auto 2%;
   max-width: 1300px;
   font-family: 'Dosis', sans-serif;
 

@@ -3,14 +3,13 @@
 		<div class="product__area" v-for="product in products" track-by="id">
 			<div class="product__box">
 				<h2 class="product__title">{{ product.name }}</h2>
-
 				<div class="product__content">
 					<div class="product__media">
 						<img :src="product.photo.url" class="product__photo" :class="{ 'product__photo--horizontal': product.photo.orientation === 'horizontal' }">
 					</div>
 
 					<div class="product__info">
-						<p class="product__description">{{ product.description }}</p>
+						<p class="product__description">{{ product.description }}</p> <span v-show="product.description.length > 55">...</span>
 						<p class="product__price">R$ {{ product.price.toFixed(2).replace('.', ',') }}</p>
 					</div>
 				</div>
@@ -128,9 +127,17 @@ export default {
 	}
 
 	&__description {
-		margin-bottom: 5%;
+		margin-bottom: 0%;
 		letter-spacing: 2px;
 		font-size: 12px;
+		overflow: hidden;
+		height: 40px;
+
+		&--active {
+			&:after {
+				content: '...';
+			}
+		}
 	}
 
 	&__price {
