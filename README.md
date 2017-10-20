@@ -3,7 +3,7 @@
 > Projeto de uma livraria feito em Vue.js 2 e Vuex 2.
 
 
-## Instalção
+## Instalação
 
 ``` bash
 # Clonando repositório
