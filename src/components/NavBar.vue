@@ -1,13 +1,13 @@
 <template>
 <header class="header">
-  <router-link to="/"  class="header__link">
-    <h1 class="header__title">Livraria Flip</h1>
-  </router-link>
-
   <nav class="nav">
     <router-link to="/"  class="nav__link nav__link--back" :class="{ 'nav__link--active': $route.path === '/cart' }">
       <img class="nav__media"  src="../assets/previous.svg">
     </router-link>	
+
+    <router-link to="/"  class="nav__link nav__link--title">
+      <h1 class="nav__title">Livraria Flip</h1>
+    </router-link>
 
     <router-link class="nav__link nav__link--cart" to='/cart'>
       <img class="nav__media"  src="../assets/shopping-cart.svg">
@@ -34,37 +34,32 @@ export default {
 <style lang="scss" scoped>
 .header {
   text-align: center;
-  width: 90%;
-  margin: 2% auto 2%;
-  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
   font-family: 'Dosis', sans-serif;
+  position: fixed;
+  top: 0;
+  height: 65px;
+  background-color: #ffffff;
 
   &__link {
     text-decoration: none;
-  }
-
-  &__title {
-    margin: 0;
-    color: #008b8b;
-    font-size: 27px;
-    line-height: 25px;
-    position: absolute;
-    left: 0;
-    right: 0;
-
-    @media only screen and (min-width: 450px) {
-      font-size: 40px;
-    }
   }
 }
 
 .nav {
   width: 100%;
-  margin: 30px auto;
   display: flex;
   justify-content: space-between;
   padding-bottom: 20px;
+  padding-top: 20px;
   border-bottom: 1px solid #008b8b;
+
+  &__title {
+    width: 200px;
+    margin: 0 auto;
+    color: #008b8b;
+  }
 
   &__link {
     width: 25px;
@@ -74,10 +69,19 @@ export default {
     &--back {
       display: none;
       margin-right: auto;
+      margin-left: 20px;
     }
 
     &--cart {
       margin-left: auto;
+      margin-right: 20px;
+    }
+
+    &--title {
+      width: 100%;
+      display: block;
+      position: absolute;
+      text-decoration: none;
     }
 
   }

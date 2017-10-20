@@ -9,7 +9,7 @@
 					</div>
 
 					<div class="product__info">
-						<p class="product__description">{{ product.description }}</p> <span v-show="product.description.length > 55">...</span>
+						<p class="product__description">{{ product.description }}</p><span>...</span>
 						<p class="product__price">R$ {{ product.price.toFixed(2).replace('.', ',') }}</p>
 					</div>
 				</div>
@@ -42,6 +42,7 @@ export default {
 	flex-wrap: wrap;
 	max-width: 1300px;
 	font-family: 'Dosis', sans-serif;
+	margin-top: 90px;
 
 	&__area {
 		width: calc(30% - 2px);
@@ -50,6 +51,7 @@ export default {
 		color: #008b8b;
 		min-width: 350px;
 		margin-bottom: 5%;
+		padding-top: 5px;
 		margin-right: auto;
 
 		&:nth-child(3n) {
@@ -84,7 +86,8 @@ export default {
 	&__title {
 		margin: 0;
 		font-size: 22px;
-		margin-top: 5%;
+		margin-top: auto;
+		margin-bottom: auto;
 		padding: 0 2%;
 		text-transform: uppercase;
 		font-family: 'Dosis', sans-serif;
@@ -127,17 +130,11 @@ export default {
 	}
 
 	&__description {
-		margin-bottom: 0%;
-		letter-spacing: 2px;
+		letter-spacing: 1px;
 		font-size: 12px;
 		overflow: hidden;
-		height: 40px;
-
-		&--active {
-			&:after {
-				content: '...';
-			}
-		}
+		max-height: 42px;
+		margin-bottom: 0;
 	}
 
 	&__price {

@@ -69,6 +69,7 @@ export default {
 
   &__area {
     text-align: center;
+    margin-top: 84px;
   }
 
   &__empty {
