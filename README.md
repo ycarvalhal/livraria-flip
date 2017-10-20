@@ -1,21 +1,25 @@
 # livraria-flip
 
-> A Vue.js project
+> Projeto de uma livraria feito em Vue.js 2 e Vuex 2.
 
-## Build Setup
+
+## Instalção
 
 ``` bash
-# install dependencies
+# Clonando repositório
+git clone https://github.com/ycarvalhal/livraria-flip.git
+
+# Instalando dependências
+cd livraria-flip
 npm install
 
-# serve with hot reload at localhost:8080
+# Rodando servidor local na porta 8080
 npm run dev
 
-# build for production with minification
+# build para produção minificado
 npm run build
 
-# build for production and view the bundle analyzer report
-npm run build --report
+# Rodando demo
+Vá na pasta livraria-flip/dist e dê um duplo clique no "index.html", 
+caso não abra, basta arrastar o arquivo para o seu navegador.
 ```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
